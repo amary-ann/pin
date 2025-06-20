@@ -1,7 +1,7 @@
 document.querySelector(".validate-pin").addEventListener("click", async (e) => {
     e.preventDefault();
     const pin = document.getElementById("pin-input").value.trim();
-    const errorBox = document.getElementId("error");
+    const errorBox = document.getElementById("error");
     console.log("Pin entered:", pin);
     if (pin.length !== 6 || isNaN(pin)) {
         errorBox.classList.remove("hidden");
