@@ -1,0 +1,29 @@
+document.querySelector(".validate-pin").addEventListener("click", async () => {
+    e.preventDefault();
+    const pin = document.getElementById("pin-input").value.trim();
+    console.log("Pin entered:", pin);
+    if (pin.length !== 6 || isNaN(pin)) {
+        errorBox.classList.remove("hidden");
+        errorBox.innerHTML += `<li style = "color: red;">Please enter a valid 6-digit PIN.</li>
+    `;
+        return;
+    }
+    let pinData = {"pin": pin};
+    console.log(JSON.stringify(pinData));
+    pin_validation = await fetch("https://mimic-sparkle.onrender.com/submit-pin",
+        { method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(pinData)
+        })
+    pin_validation = await pin_validation.json();
+    console.log(pin_validation);
+
+    if(pin_validation['status'] === "success") {
+        pin.value = "";
+        errorBox.classList.remove("hidden");
+        errorBox.innerHTML += `<li style = "color: green;">Successful</li>`;
+    }
+
+});

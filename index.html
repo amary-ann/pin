@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enter PIN</title>
+  <link rel="stylesheet" href="pin.css">
+</head>
+<body>
+  <h2>Enter Your PIN</h2>
+  <form method="POST" action="/submit-pin">
+    <div id="error" class="mt-6 text-sm text-gray-600 hidden"></div>
+    <input type="hidden" name="user_id" value="">
+    <input type="password" id="pin-input" name="pin" placeholder="Enter PIN" required />
+    <button type="submit" class="validate-pin">Submit</button>
+  </form>
+  <script src="app.js"></script>
+  <script>
+    // Extract user_id from query string and attach to form
+    const params = new URLSearchParams(window.location.search);
+    const userId = params.get("user_id");
+    document.querySelector("input[name='user_id']").value = userId;
+  </script>
+</body>
+</html>
