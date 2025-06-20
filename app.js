@@ -1,4 +1,4 @@
-document.querySelector(".validate-pin").addEventListener("click", async () => {
+document.querySelector(".validate-pin").addEventListener("click", async (e) => {
     e.preventDefault();
     const pin = document.getElementById("pin-input").value.trim();
     console.log("Pin entered:", pin);
@@ -21,7 +21,7 @@ document.querySelector(".validate-pin").addEventListener("click", async () => {
     console.log(pin_validation);
 
     if(pin_validation['status'] === "success") {
-        pin.value = "";
+        document.getElementById("pin-input").value = "";
         errorBox.classList.remove("hidden");
         errorBox.innerHTML += `<li style = "color: green;">Successful</li>`;
     }
