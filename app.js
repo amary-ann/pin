@@ -21,7 +21,7 @@ document.querySelector(".validate-pin").addEventListener("click", async (e) => {
     pin_validation = await pin_validation.json();
     console.log(pin_validation);
 
-    if(pin_validation['success'] == True) {
+    if(pin_validation['success'] == true) {
         document.getElementById("pin-input").value = "";
         errorBox.classList.remove("hidden");
         errorBox.innerHTML += `<li style = "color: green;">Your transaction has been processed</li>`;
