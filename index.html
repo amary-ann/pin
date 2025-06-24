@@ -15,11 +15,5 @@
     <button type="submit" class="validate-pin">Submit</button>
   </form>
   <script src="app.js"></script>
-  <script>
-    // Extract user_id from query string and attach to form
-    const params = new URLSearchParams(window.location.search);
-    const userId = params.get("user_id");
-    document.querySelector("input[name='user_id']").value = userId;
-  </script>
 </body>
 </html>
