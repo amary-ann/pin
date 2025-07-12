@@ -8,6 +8,11 @@ body {
       font-family: Arial, sans-serif;
       background-color: #fff;
     }
+    .phonediv {
+    position: absolute;
+    top: 20px;       
+    right: 20px;
+  }
     h2 {
       font-size: 48px;
       font-weight: bold;
