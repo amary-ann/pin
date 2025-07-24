@@ -27,7 +27,7 @@ document.querySelector(".validate-pin").addEventListener("click", async (e) => {
     
     let pinData = {"pin": pin,"phone_number":phoneNum};
     console.log(JSON.stringify(pinData));
-    pin_validation = await fetch("https://mimic-sparkle.onrender.com/verify-transaction",
+    pin_validation = await fetch("https://mimic-sparkle-latest.onrender.com/verify-transaction",
         { method: "POST",
             headers: {
                 "Content-Type": "application/json"
